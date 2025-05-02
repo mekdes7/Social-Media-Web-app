@@ -83,14 +83,14 @@ export const CommunityDisplay = ({ communityId }: Props) => {
                   id: post.id,
                   title: post.title,
                   content: post.content,
-                  image_url: post.image_url,
+                  image_url: post.image_url || "",
                   created_at: post.created_at,
                   like_count: post.like_count,
                   dislike_count: post.dislike_count,
                   comment_count: post.comment_count,
                   author_name: post.author_name,
                   avatar_url: post.avatar_url,
-                  communities: {
+                  community: {
                     name: post.community_name,
                   },
                 }}

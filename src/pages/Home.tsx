@@ -16,7 +16,7 @@ export const Home = () => {
     getSession();
 
     const { data: listener } = supabase.auth.onAuthStateChange(
-      (event: AuthChangeEvent, session: Session | null) => {
+      (_event: AuthChangeEvent, session: Session | null) => {
         setUser(session?.user || null);
       }
     );

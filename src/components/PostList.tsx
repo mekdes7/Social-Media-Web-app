@@ -15,7 +15,9 @@ author_email?: string
 like_count: number
 dislike_count: number
 comment_count: number
-
+community?: {
+    name: string;
+  };
 }
 const fetchPosts = async ():Promise<Post[]> => {
     const {data,error}= await supabase.rpc("get_posts_with_counts")

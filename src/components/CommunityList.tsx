@@ -1,7 +1,12 @@
 import { useQuery } from "@tanstack/react-query";
 import { supabase } from "../supabase-client";
 import { Link } from "react-router-dom";
-
+export interface Community {
+  id: number;
+  name: string;
+  description: string;
+  created_at: string;
+}
 export const fetchCommunities = async () => {
   const { data, error } = await supabase
     .from("communities")

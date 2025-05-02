@@ -135,7 +135,7 @@ export const CommentSection = ({ postId }: Props) => {
       
       return { previousComments };
     },
-    onError: (err, newComment, context) => {
+    onError: (_err, _newComment, context) => {
       queryClient.setQueryData(['comments', postId], context?.previousComments);
      
     },
@@ -144,7 +144,7 @@ export const CommentSection = ({ postId }: Props) => {
       setNewComment("");
     }
   });
-
+   
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!newComment.trim()) return;
