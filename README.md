@@ -1,54 +1,26 @@
-# React + TypeScript + Vite
+🌐 Social Media Web App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A full-featured social media application built with React, Supabase, TypeScript, and Tailwind CSS. Users can register, create posts with images/files, and interact within communities. 
 
-Currently, two official plugins are available:
+ Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- 🔐 Authentication via Supabase
+- 📝 Create posts with optional file uploads (images, videos, docs, etc.)
+- 🌍 Join and post to communities
+- ⚙️ React Query for data fetching
+- 💅 Tailwind CSS for responsive design
 
-## Expanding the ESLint configuration
+ Technologies Used
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- React + Vite + TypeScript
+- Tailwind CSS
+- Supabase (Auth + Storage + Database)
+- React Query
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+ Getting Started
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+ Clone the Repository
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+```bash
+git clone https://github.com/mekdes7/Social-Media-Web-app.git
+cd Social-Media-Web-app
