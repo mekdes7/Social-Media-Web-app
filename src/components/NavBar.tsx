@@ -15,10 +15,8 @@ export const NavBar = () => {
   const displayName = user?.user_metadata.user_name || user?.email?.split;
 
   return (
-    <nav
-      className= 'absolute top-0 left-0 w-full p-4 z-10'
-    >
-      <div className="max-w-7xl mx-auto flex items-center justify-between md:justify-between">
+    <nav className="fixed top-0 left-0 w-full p-4 z-10 bg-gray-900 text-white">
+  <div className="max-w-7xl mx-auto flex items-center justify-between md:justify-between">
        
         <div className="md:hidden">
           {user && (
@@ -106,26 +104,20 @@ export const NavBar = () => {
 
      
       {mobileMenuOpen && (
-        <div
-          className='w-full p-4 flex flex-col items-center space-y-4 mt-2'
-        >
-          <Link to="/" onClick={() => setMobileMenuOpen(false)}>
-            Home
-          </Link>
-          <Link to="/create" onClick={() => setMobileMenuOpen(false)}>
-            Create Post
-          </Link>
-          <Link to="/communities" onClick={() => setMobileMenuOpen(false)}>
-            Communities
-          </Link>
-          <Link
-            to="/community/create"
-            onClick={() => setMobileMenuOpen(false)}
-          >
-            Create Community
-          </Link>
-        </div>
-      )}
+    <div className="fixed inset-0 w-screen h-screen bg-black text-white p-4 flex flex-col items-center space-y-6 z-50 pt-20">
+    <button 
+      onClick={() => setMobileMenuOpen(false)} 
+      className="self-end mb-6"
+    >
+      <img className="w-6 invert" src={assets.close} alt="Close menu" />
+    </button>
+    <Link to="/" onClick={() => setMobileMenuOpen(false)}>Home</Link>
+    <Link to="/create" onClick={() => setMobileMenuOpen(false)}>Create Post</Link>
+    <Link to="/communities" onClick={() => setMobileMenuOpen(false)}>Communities</Link>
+    <Link to="/community/create" onClick={() => setMobileMenuOpen(false)}>Create Community</Link>
+  </div>
+)}
+
     </nav>
   );
 };
