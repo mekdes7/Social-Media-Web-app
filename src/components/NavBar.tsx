@@ -3,22 +3,20 @@ import { Link } from "react-router-dom";
 
 import { assets } from "../assets/assets";
 import { useAuth } from "../context/AuthContext";
-import { useTheme } from "../context/ThemeContext";
+
 
 export const NavBar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [showProfileMenu, setShowProfileMenu] = useState(false);
 
   const { signOut, user } = useAuth();
-  const { darkMode, toggleTheme } = useTheme();
+ 
 
   const displayName = user?.user_metadata.user_name || user?.email?.split;
 
   return (
     <nav
-      className={`${
-        darkMode ? "bg-black text-white" : "bg-black text-white"
-      } fixed top-0 left-0 w-full p-4 z-10`}
+      className= 'absolute top-0 left-0 w-full p-4 z-10'
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between md:justify-between">
        
@@ -109,9 +107,7 @@ export const NavBar = () => {
      
       {mobileMenuOpen && (
         <div
-          className={`md:hidden ${
-            darkMode ? "bg-gray-900 text-white" : "bg-black text-white"
-          } w-full p-4 flex flex-col items-center space-y-4 mt-2`}
+          className='w-full p-4 flex flex-col items-center space-y-4 mt-2'
         >
           <Link to="/" onClick={() => setMobileMenuOpen(false)}>
             Home
